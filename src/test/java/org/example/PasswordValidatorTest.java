@@ -39,6 +39,14 @@ public class PasswordValidatorTest {
     }
 
     @Test
+    public void testPasswordContainsNumber() {
+        //write a test that checks if the password contains a number
+        MyPasswordValidator passwordValidator = new MyPasswordValidator();
+        boolean result = passwordValidator.containsNumber("123456789Aa1");
+        assertTrue(result);
+    }
+
+    @Test
     public void testPasswordIsValid() {
         //write a test that checks if the password is valid
         MyPasswordValidator passwordValidator = new MyPasswordValidator();
