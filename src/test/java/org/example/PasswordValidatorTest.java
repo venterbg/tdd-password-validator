@@ -47,6 +47,14 @@ public class PasswordValidatorTest {
     }
 
     @Test
+    public void testPasswordContainsUnderscore() {
+        //write a test that checks if the password contains an underscore
+        MyPasswordValidator passwordValidator = new MyPasswordValidator();
+        boolean result = passwordValidator.containsUnderscore("123456789Aa_");
+        assertTrue(result);
+    }
+
+    @Test
     public void testPasswordIsValid() {
         //write a test that checks if the password is valid
         MyPasswordValidator passwordValidator = new MyPasswordValidator();
