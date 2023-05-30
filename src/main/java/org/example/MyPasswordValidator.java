@@ -7,7 +7,10 @@ public class MyPasswordValidator implements PasswordValidator{
     }
 
     public boolean validate(String password) {
-        return isValidLength(password);
+        return isValidLength(password) &&
+                containsCapitalLetter(password) &&
+                containsLowercaseLetter(password) &&
+                containsNumber(password);
     }
 
     public boolean containsCapitalLetter(String password) {
@@ -16,6 +19,10 @@ public class MyPasswordValidator implements PasswordValidator{
 
     public boolean containsLowercaseLetter(String s) {
         return s.matches(".*[a-z].*");
+    }
+
+    public boolean containsNumber(String s) {
+        return s.matches(".*[0-9].*");
     }
 }
 
