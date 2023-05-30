@@ -2,6 +2,7 @@ package org.example;
 
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class PasswordValidatorTest {
@@ -67,6 +68,6 @@ public class PasswordValidatorTest {
         //write a test that checks if the password is invalid
         MyPasswordValidator passwordValidator = new MyPasswordValidator();
         boolean result = passwordValidator.validate("123456789Aa");
-        assertTrue(result);
+        assertFalse(result);
     }
 }
