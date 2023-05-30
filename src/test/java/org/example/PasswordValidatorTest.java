@@ -31,6 +31,14 @@ public class PasswordValidatorTest {
     }
 
     @Test
+    public void testPasswordContainsLowercaseLetter() {
+        //write a test that checks if the password contains a lowercase letter
+        MyPasswordValidator passwordValidator = new MyPasswordValidator();
+        boolean result = passwordValidator.containsLowercaseLetter("123456789Aa");
+        assertTrue(result);
+    }
+
+    @Test
     public void testPasswordIsValid() {
         //write a test that checks if the password is valid
         MyPasswordValidator passwordValidator = new MyPasswordValidator();
