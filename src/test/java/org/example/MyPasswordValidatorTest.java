@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class PasswordValidatorTest {
+public class MyPasswordValidatorTest {
     //write a test that checks if the password is longer than 8 characters
     //write a test that checks if the password contains a capital letter
     //write a test that checks if the password contains a lowercase letter
@@ -19,7 +19,7 @@ public class PasswordValidatorTest {
     public void testPasswordLength() {
         //write a test that checks if the password is longer than 8 characters
         MyPasswordValidator passwordValidator = new MyPasswordValidator();
-        boolean result = passwordValidator.isValidLength("123456789");
+        boolean result = passwordValidator.isValidLength("123456789", 8);
         assertTrue(result);
     }
 
