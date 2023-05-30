@@ -13,5 +13,9 @@ public class MyPasswordValidator implements PasswordValidator{
     public boolean containsCapitalLetter(String password) {
         return password.matches(".*[A-Z].*");
     }
+
+    public boolean containsLowercaseLetter(String s) {
+        return s.matches(".*[a-z].*");
+    }
 }
 
