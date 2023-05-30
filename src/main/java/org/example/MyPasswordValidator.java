@@ -9,5 +9,9 @@ public class MyPasswordValidator implements PasswordValidator{
     public boolean validate(String password) {
         return isValidLength(password);
     }
+
+    public boolean containsCapitalLetter(String password) {
+        return password.matches(".*[A-Z].*");
+    }
 }
 
