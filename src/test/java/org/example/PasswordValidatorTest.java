@@ -61,4 +61,12 @@ public class PasswordValidatorTest {
         boolean result = passwordValidator.validate("123456789Aa_");
         assertTrue(result);
     }
+
+    @Test
+    public void testPasswordIsInvalid() {
+        //write a test that checks if the password is invalid
+        MyPasswordValidator passwordValidator = new MyPasswordValidator();
+        boolean result = passwordValidator.validate("123456789Aa");
+        assertTrue(result);
+    }
 }

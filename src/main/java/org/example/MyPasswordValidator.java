@@ -10,7 +10,8 @@ public class MyPasswordValidator implements PasswordValidator{
         return isValidLength(password) &&
                 containsCapitalLetter(password) &&
                 containsLowercaseLetter(password) &&
-                containsNumber(password);
+                containsNumber(password) &&
+                containsUnderscore(password);
     }
 
     public boolean containsCapitalLetter(String password) {
