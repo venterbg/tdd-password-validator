@@ -24,5 +24,9 @@ public class MyPasswordValidator implements PasswordValidator{
     public boolean containsNumber(String s) {
         return s.matches(".*[0-9].*");
     }
+
+    public boolean containsUnderscore(String s) {
+        return s.matches(".*[_].*");
+    }
 }
 
