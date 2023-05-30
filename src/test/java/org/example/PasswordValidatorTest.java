@@ -16,7 +16,7 @@ public class PasswordValidatorTest {
     public void testPasswordLength() {
         //write a test that checks if the password is longer than 8 characters
         MyPasswordValidator passwordValidator = new MyPasswordValidator();
-        boolean result = passwordValidator.validate("12345678");
+        boolean result = passwordValidator.validate("123456789");
         assertTrue(result);
     }
 
