@@ -51,3 +51,61 @@ Replace `"your_password_here"` with the actual password you want to validate.
 ```
 
 The application will output whether the provided password is valid or not.
+
+
+## Running with Docker
+
+You can also build and run this application using Docker.
+
+1.  **Build the Docker Image:**
+    Navigate to the project root directory (where the `Dockerfile` is located) and run:
+    ```bash
+    docker build -t password-validator-service .
+    ```
+
+2.  **Run the Docker Container:**
+    Once the image is built, run it with:
+    ```bash
+    docker run -p 7070:7070 password-validator-service
+    ```
+    This will start the service and map port 7070 on your host to port 7070 in the container.
+
+## API Usage
+
+The service exposes a POST endpoint for password validation.
+
+*   **Endpoint:** `/validate`
+*   **Method:** `POST`
+*   **Request Body:** JSON object with a "password" field.
+    ```json
+    {
+        "password": "your_password_here"
+    }
+    ```
+*   **Response Body:** JSON object indicating validity.
+    *   Success (HTTP 200):
+        ```json
+        {
+            "isValid": true
+        }
+        ```
+        or
+        ```json
+        {
+            "isValid": false
+        }
+        ```
+    *   Error (HTTP 400 - e.g., bad request, missing password):
+        ```json
+        {
+            "isValid": false 
+        }
+        ```
+
+**Example `curl` command:**
+
+```bash
+curl -X POST -H "Content-Type: application/json" -d '{"password":"Test_123"}' http://localhost:7070/validate
+```
+
+This command will send a POST request to the running service (either run directly or via Docker) and return a JSON response.
