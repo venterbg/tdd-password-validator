@@ -37,16 +37,16 @@ class InputValidatorTest {
     }
 
     @Test
-    void containsLowercaseLetter_Success() {
+    void containsLowerCase_Success() {
         InputValidator inputValidator = new InputValidator("123456789Aa");
-        List<String> result = inputValidator.containsLowercaseLetter().validate();
+        List<String> result = inputValidator.containsLowerCase().validate();
         assertTrue(result.isEmpty());
     }
 
     @Test
-    void containsLowercaseLetter_Failure() {
+    void containsLowerCase_Failure() {
         InputValidator inputValidator = new InputValidator("123456789A");
-        List<String> result = inputValidator.containsLowercaseLetter().validate();
+        List<String> result = inputValidator.containsLowerCase().validate();
         assertTrue(result.contains("Input must contain at least one lowercase letter."));
     }
 
@@ -83,8 +83,8 @@ class InputValidatorTest {
         InputValidator inputValidator = new InputValidator("123456789Aa_");
         List<String> result = inputValidator
                 .isValidLength(8)
-                .containsCapitalLetter()
-                .containsLowercaseLetter()
+                .containsUpperCase()
+                .containsLowerCase()
                 .containsNumber()
                 .containsUnderscore()
                 .validate();

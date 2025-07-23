@@ -18,14 +18,19 @@ public class InputValidator  {
             return this;
         }
 
-        public InputValidator containsCapitalLetter() {
+        /**
+         * Checks if the input contains at least one uppercase letter.
+         *
+         * @return this InputValidator instance.
+         */
+        public InputValidator containsUpperCase() {
             if (!inputString.matches(".*[A-Z].*")) {
-                messages.add("Input must contain at least one capital letter.");
+                messages.add("Input must contain at least one uppercase letter.");
             }
             return this;
         }
 
-        public InputValidator containsLowercaseLetter() {
+        public InputValidator containsLowerCase() {
             if (!inputString.matches(".*[a-z].*")) {
                 messages.add("Input must contain at least one lowercase letter.");
             }
