@@ -1,11 +1,15 @@
 package org.example;
 
 public interface IPasswordRules {
-    default boolean isValidLength(String password, int minimumPasswordLength) {
+    default boolean isGreaterThanMinimumLength(String password, int minimumPasswordLength) {
             return password.length() > minimumPasswordLength;
     }
 
-    default boolean containsCapitalLetter(String password) {
+    default boolean isLessThanMaxLength(String password, int maximumPasswordLength) {
+            return password.length() < maximumPasswordLength;
+    }
+
+    default boolean containsUppercaseLetter(String password) {
             return password.matches(".*[A-Z].*");
     }
 

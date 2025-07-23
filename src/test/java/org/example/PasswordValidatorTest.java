@@ -19,6 +19,7 @@ public class PasswordValidatorTest {
                 .containsSpecialCharacter("_&#!?@")
                 .validate();
         assertTrue(result.isEmpty());
+
     }
 
     @Test
@@ -145,5 +146,4 @@ public class PasswordValidatorTest {
                 .validate();
         assertTrue(result.contains("Password must contain at least one special character"));
     }
-
 }

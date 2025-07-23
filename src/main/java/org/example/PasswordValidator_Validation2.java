@@ -5,8 +5,8 @@ public class PasswordValidator_Validation2 implements IPasswordValidator, IPassw
 
     public boolean validate(String password) {
 
-        return isValidLength(password, MINIMUM_PASSWORD_LENGTH) &&
-                containsCapitalLetter(password) &&
+        return isGreaterThanMinimumLength(password, MINIMUM_PASSWORD_LENGTH) &&
+                containsUppercaseLetter(password) &&
                 containsLowercaseLetter(password) &&
                 containsNumber(password);
     }

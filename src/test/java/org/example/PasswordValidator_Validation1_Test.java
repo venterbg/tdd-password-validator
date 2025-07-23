@@ -19,7 +19,7 @@ public class PasswordValidator_Validation1_Test {
     public void testPasswordLength() {
         //write a test that checks if the password is longer than 8 characters
         PasswordValidator_Validation1 passwordValidator = new PasswordValidator_Validation1();
-        boolean result = passwordValidator.isValidLength("123456789", 8);
+        boolean result = passwordValidator.isGreaterThanMinimumLength("123456789", 8);
         assertTrue(result);
     }
 
@@ -27,7 +27,7 @@ public class PasswordValidator_Validation1_Test {
     public void testPasswordContainsCapitalLetter() {
         //write a test that checks if the password contains a capital letter
         PasswordValidator_Validation1 passwordValidator = new PasswordValidator_Validation1();
-        boolean result = passwordValidator.containsCapitalLetter("123456789A");
+        boolean result = passwordValidator.containsUppercaseLetter("123456789A");
         assertTrue(result);
     }
 
