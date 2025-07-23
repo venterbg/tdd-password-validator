@@ -25,14 +25,14 @@ class InputValidatorTest {
     @Test
     void containsCapitalLetter_Success() {
         InputValidator inputValidator = new InputValidator("123456789Aa");
-        List<String> result = inputValidator.containsCapitalLetter().validate();
+        List<String> result = inputValidator.containsUpperCase().validate();
         assertTrue(result.isEmpty());
     }
 
     @Test
     void containsCapitalLetter_Failure() {
         InputValidator inputValidator = new InputValidator("123456789a");
-        List<String> result = inputValidator.containsCapitalLetter().validate();
+        List<String> result = inputValidator.containsUpperCase().validate();
         assertTrue(result.contains("Input must contain at least one capital letter."));
     }
 
@@ -95,8 +95,8 @@ class InputValidatorTest {
     void validate_Failure() {
         InputValidator inputValidator = new InputValidator("");
         List<String> result = inputValidator.isValidLength(8)
-                .containsCapitalLetter()
-                .containsLowercaseLetter()
+                .containsUpperCase()
+                .containsLowerCase()
                 .containsNumber()
                 .containsUnderscore()
                 .validate();
